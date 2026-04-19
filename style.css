@@ -3011,3 +3011,77 @@ input[type="range"]::-moz-range-thumb:hover {
 /* ==========================================================================
    END OF FILE
    ========================================================================== */
+/* ==========================================================================
+   HTML COMPATIBILITY PATCH 
+   (Paste at the very bottom of your style.css)
+   Maps legacy HTML classes to the new 100x 3D Engine
+   ========================================================================== */
+
+/* 1. Upgrade .text-grad to the animated 3D shine */
+.text-grad {
+  background: linear-gradient(135deg, var(--accent-main), var(--primary-100), var(--accent-main));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine-text 4s linear infinite;
+  text-shadow: 0 4px 10px hsla(205, 80%, 70%, 0.15);
+}
+
+/* 2. Upgrade .btn-ghost to the new Glassmorphic style */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
+}
+.btn-ghost:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-main);
+  background: hsla(205, 80%, 70%, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--glow-primary);
+}
+
+/* 3. Wire up the Tech Badges Grid */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-4);
+}
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-base);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--t-base);
+  cursor: default;
+}
+.badge-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-main);
+  box-shadow: var(--shadow-elevation-2), inset 0 0 10px var(--glow-primary);
+}
+.badge-icon {
+  font-size: 2rem;
+  color: var(--text-secondary);
+  transition: color var(--t-base), transform var(--t-fast);
+}
+.badge-item:hover .badge-icon {
+  color: var(--accent-main);
+  transform: scale(1.1);
+}
+.badge-name {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 4. Map the inline margin utility classes used in the HTML */
+.mt-6 { margin-top: var(--space-6) !important; }
+.mb-2 { margin-bottom: var(--space-2) !important; }
