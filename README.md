@@ -1,4 +1,4 @@
-# Xuneel Services — Official Website v2.0
+# Xuneel Services — Official Website v3.0
 
 > Full-stack app development studio website. Zero images. 100% code-rendered graphics. Built for performance, accessibility, and a $100K aesthetic.
 
