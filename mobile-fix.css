@@ -1,0 +1,70 @@
+/* ═══════════════════════════════════════════════════════════
+   AUXANO STUDIO — MOBILE-FIX.CSS
+   Targeted fixes for horizontal overflow / blank right space
+   Load this AFTER style.css — it only overrides what's broken
+═══════════════════════════════════════════════════════════ */
+
+/* ── FIX 1: html overflow — body alone doesn't block
+   horizontal scroll on Android Chrome / mobile Safari ── */
+html {
+  overflow-x: hidden;
+}
+
+/* ── FIX 2: Hard-clip the hero so the Three.js sphere
+   (positioned at x:180 in world space) can't push
+   the layout wider than the viewport ── */
+.hero {
+  overflow-x: hidden;
+}
+
+/* ── FIX 3: Simplify hero-content margin on tablets/mobile.
+   The desktop calc uses 100vw which on some mobile browsers
+   includes scrollbar width, creating a feedback loop ── */
+@media (max-width: 1024px) {
+  .hero-content {
+    margin-left: clamp(1rem, 4vw, 2.5rem);
+    margin-right: clamp(1rem, 4vw, 2.5rem);
+    max-width: 100%;
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ── FIX 4: On narrow phones (≤700px) the word "Excellence"
+   in Syne 800 is wide enough to overflow a 360px viewport.
+   Reduce font-size and add word-break as safety net ── */
+@media (max-width: 700px) {
+  .hero-content {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
+  .hero-h1 {
+    font-size: clamp(1.75rem, 6.5vw, 2.8rem);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Clip any section that might have wider-than-viewport children */
+  .section,
+  section,
+  .stats-band,
+  .marquee-strip,
+  .marquee-inner {
+    overflow-x: hidden;
+  }
+}
+
+/* ── FIX 5: Very small phones (≤400px) — tighten heading
+   further so nothing clips at the right edge ── */
+@media (max-width: 400px) {
+  .hero-h1 {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .hero-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
