@@ -39,13 +39,11 @@ html {
     margin-left: 1.25rem;
     margin-right: 1.25rem;
   }
-
   .hero-h1 {
     font-size: clamp(1.75rem, 6.5vw, 2.8rem);
     overflow-wrap: break-word;
     word-break: break-word;
   }
-
   /* Clip any section that might have wider-than-viewport children */
   .section,
   section,
@@ -62,9 +60,68 @@ html {
   .hero-h1 {
     font-size: clamp(1.6rem, 6vw, 2rem);
   }
-
   .hero-content {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+}
+
+/* ── FIX 6: Hero KPIs dead space — style.css switches to
+   flex-direction:column at ≤480px which stacks 3 stats
+   vertically, creating massive empty zones between them.
+   Force horizontal row and scale numbers down to fit. ── */
+@media (max-width: 480px) {
+  .hero-kpis {
+    flex-direction: row !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 1.25rem;
+  }
+  .kpi       { flex: 0 0 auto; min-width: 0; }
+  .kpi-num   { font-size: 1.2rem; }
+  .kpi-label { font-size: .55rem; line-height: 1.3; }
+}
+
+/* ── FIX 7: Section heading overflow — long words like
+   "Comprehensive" in Syne 800 at 2rem (32px) run ~455px
+   wide on a 360px screen, clipping at the right edge.
+   Bring font-size inside the safe zone + add wrap guard. ── */
+@media (max-width: 480px) {
+  .sec-title {
+    font-size: clamp(1.4rem, 5vw, 1.85rem);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .sec-head {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+}
+
+/* ── FIX 8: Pricing pop-card glow blob — .price-pop-glow is
+   a 200×200px radial-gradient at top:-60px. Android Chrome
+   composites it as a visible frosted rectangle, not a subtle
+   glow. Safe to hide on touch screens — the card border glow
+   (via box-shadow) still signals the popular tier. ── */
+@media (max-width: 900px) {
+  .price-pop-glow {
+    display: none;
+  }
+}
+
+/* ── FIX 9: About cube backdrop-filter GPU artifact —
+   backdrop-filter:blur(4px) inside transform-style:preserve-3d
+   triggers a known Android Chrome compositing bug: the entire
+   stacking context paints as a large foggy rectangle instead
+   of glass-tinted cube faces. Strip backdrop-filter on mobile;
+   the cube colour + border still reads correctly without it. ── */
+@media (max-width: 700px) {
+  .c-face {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .about-visual {
+    min-height: 200px;
   }
 }
