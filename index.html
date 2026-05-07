@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auxano Studio | Full Stack Web & App Development — Delhi, India</title>
+  <meta name="description" content="Auxano Studio crafts premium full-stack web & app solutions. Founded by Pratik Sharma in Delhi. React · Next.js · Flutter · AI · Cloud." />
+  <meta name="keywords" content="full stack development, web app, mobile app, UI/UX, Delhi, India, React, Flutter, AI" />
+  <meta property="og:title" content="Auxano Studio — Craft. Code. Scale." />
+  <meta property="og:description" content="Premium digital studio in Delhi. We turn bold ideas into extraordinary digital products." />
+  <meta property="og:type" content="website" />
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════ CURSOR ══════════════════════════════ -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ══════════════════════════════ LOADER ══════════════════════════════ -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="l-icon">◈</span>
+      <span class="l-text">AUXANO</span>
+    </div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loader-bar"></div>
+    </div>
+    <div class="loader-pct" id="loader-pct">0%</div>
+    <p class="loader-tagline">Initializing digital excellence…</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ NAVBAR ══════════════════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <span class="logo-sym">◈</span>
+      <span class="logo-name">AUXANO</span>
+    </a>
+    <nav class="nav-menu" id="nav-menu">
+      <ul class="nav-list">
+        <li><a href="#home"      class="nav-link" data-section="home">Home</a></li>
+        <li><a href="#services"  class="nav-link" data-section="services">Services</a></li>
+        <li><a href="#about"     class="nav-link" data-section="about">About</a></li>
+        <li><a href="#portfolio" class="nav-link" data-section="portfolio">Work</a></li>
+        <li><a href="#team"      class="nav-link" data-section="team">Team</a></li>
+        <li><a href="#pricing"   class="nav-link" data-section="pricing">Pricing</a></li>
+        <li><a href="#contact"   class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-nav-cta">Start a Project <i class="fas fa-arrow-right"></i></a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<section class="hero" id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-noise"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge reveal-fade">
+      <span class="badge-pulse"></span>
+      Available for new projects
+    </div>
+
+    <h1 class="hero-h1 reveal-fade" style="--d:.1s">
+      <span class="h1-line">We Craft</span>
+      <span class="h1-line h1-gradient" id="typewriter-target">Digital Excellence</span>
+      <span class="h1-line">That <em>Scales.</em></span>
+    </h1>
+
+    <p class="hero-sub reveal-fade" style="--d:.25s">
+      Premium full-stack web &amp; app studio — Delhi, India.<br />
+      Bold ideas. Exceptional products. Measurable growth.
+    </p>
+
+    <div class="hero-ctas reveal-fade" style="--d:.35s">
+      <a href="#portfolio" class="btn-primary">
+        <span>View Our Work</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="#contact" class="btn-ghost">
+        <span>Free Consultation</span>
+      </a>
+    </div>
+
+    <div class="hero-kpis reveal-fade" style="--d:.45s">
+      <div class="kpi">
+        <span class="kpi-num">150+</span>
+        <span class="kpi-label">Projects Delivered</span>
+      </div>
+      <div class="kpi-sep"></div>
+      <div class="kpi">
+        <span class="kpi-num">98%</span>
+        <span class="kpi-label">Client Satisfaction</span>
+      </div>
+      <div class="kpi-sep"></div>
+      <div class="kpi">
+        <span class="kpi-num">5+</span>
+        <span class="kpi-label">Years of Excellence</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ MARQUEE ══════════════════════════════ -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <div class="marquee-row">
+      <span>Web Development</span><span class="mdot">◆</span>
+      <span>Mobile Apps</span><span class="mdot">◆</span>
+      <span>UI/UX Design</span><span class="mdot">◆</span>
+      <span>Cloud &amp; DevOps</span><span class="mdot">◆</span>
+      <span>AI Integration</span><span class="mdot">◆</span>
+      <span>Brand Identity</span><span class="mdot">◆</span>
+      <span>SaaS Products</span><span class="mdot">◆</span>
+      <span>API Architecture</span><span class="mdot">◆</span>
+      <span>E-Commerce</span><span class="mdot">◆</span>
+      <span>Data Dashboards</span><span class="mdot">◆</span>
+      <!-- duplicate for loop -->
+      <span>Web Development</span><span class="mdot">◆</span>
+      <span>Mobile Apps</span><span class="mdot">◆</span>
+      <span>UI/UX Design</span><span class="mdot">◆</span>
+      <span>Cloud &amp; DevOps</span><span class="mdot">◆</span>
+      <span>AI Integration</span><span class="mdot">◆</span>
+      <span>Brand Identity</span><span class="mdot">◆</span>
+      <span>SaaS Products</span><span class="mdot">◆</span>
+      <span>API Architecture</span><span class="mdot">◆</span>
+      <span>E-Commerce</span><span class="mdot">◆</span>
+      <span>Data Dashboards</span><span class="mdot">◆</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ SERVICES ══════════════════════════════ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">What We Do</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">
+        Comprehensive <span class="grad">Digital Solutions</span>
+      </h2>
+      <p class="sec-sub reveal-fade" style="--d:.2s">
+        From concept to deployment — end-to-end solutions that drive real growth and lasting impact.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="svc-card glass reveal-up" style="--d:0s">
+        <div class="svc-icon-ring">
+          <div class="svc-icon"><i class="fas fa-code"></i></div>
+          <div class="svc-ring"></div>
+        </div>
+        <h3>Full Stack Web Development</h3>
+        <p>Scalable web applications from MVP to enterprise. Built with performance, security, and growth in mind.</p>
+        <div class="svc-tags">
+          <span>React</span><span>Next.js</span><span>Node.js</span><span>GraphQL</span>
+        </div>
+        <a href="#contact" class="svc-link">Start a Project <i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+
+      <div class="svc-card glass reveal-up" style="--d:.07s">
+        <div class="svc-icon-ring">
+          <div class="svc-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="svc-ring"></div>
+        </div>
+        <h3>Mobile App Development</h3>
+        <p>Native & cross-platform apps for iOS and Android. Smooth, intuitive experiences that users keep coming back to.</p>
+        <div class="svc-tags">
+          <span>Flutter</span><span>React Native</span><span>Swift</span><span>Kotlin</span>
+        </div>
+        <a href="#contact" class="svc-link">Start a Project <i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+
+      <div class="svc-card glass reveal-up" style="--d:.14s">
+        <div class="svc-icon-ring">
+          <div class="svc-icon"><i class="fas fa-palette"></i></div>
+          <div class="svc-ring"></div>
+        </div>
+        <h3>UI/UX Design</h3>
+        <p>Human-centred design backed by research. Beautiful interfaces that convert visitors into loyal users.</p>
+        <div class="svc-tags">
+          <span>Figma</span><span>Prototyping</span><span>Research</span><span>Design Systems</span>
+        </div>
+        <a href="#contact" class="svc-link">Start a Project <i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+
+      <div class="svc-card glass reveal-up" style="--d:.21s">
+        <div class="svc-icon-ring">
+          <div class="svc-icon"><i class="fas fa-cloud"></i></div>
+          <div class="svc-ring"></div>
+        </div>
+        <h3>Cloud &amp; DevOps</h3>
+        <p>Rock-solid cloud infrastructure, CI/CD pipelines, and DevOps practices for bulletproof reliability.</p>
+        <div class="svc-tags">
+          <span>AWS</span><span>GCP</span><span>Docker</span><span>Kubernetes</span>
+        </div>
+        <a href="#contact" class="svc-link">Start a Project <i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+
+      <div class="svc-card glass reveal-up" style="--d:.28s">
+        <div class="svc-icon-ring">
+          <div class="svc-icon"><i class="fas fa-brain"></i></div>
+          <div class="svc-ring"></div>
+        </div>
+        <h3>AI &amp; ML Integration</h3>
+        <p>Intelligent features powered by the latest AI. Chatbots, recommendation engines, analytics &amp; more.</p>
+        <div class="svc-tags">
+          <span>OpenAI</span><span>LangChain</span><span>TensorFlow</span><span>RAG</span>
+        </div>
+        <a href="#contact" class="svc-link">Start a Project <i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+
+      <div class="svc-card glass reveal-up" style="--d:.35s">
+        <div class="svc-icon-ring">
+          <div class="svc-icon"><i class="fas fa-gem"></i></div>
+          <div class="svc-ring"></div>
+        </div>
+        <h3>Brand &amp; Digital Identity</h3>
+        <p>Comprehensive brand strategy, visual identity, and digital presence that makes your business unforgettable.</p>
+        <div class="svc-tags">
+          <span>Logo Design</span><span>Brand Strategy</span><span>Guidelines</span><span>Assets</span>
+        </div>
+        <a href="#contact" class="svc-link">Start a Project <i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ STATS ══════════════════════════════ -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal-fade">
+        <div class="stat-icon-sm"><i class="fas fa-rocket"></i></div>
+        <div class="stat-val"><span class="counter" data-target="150">0</span><span class="stat-sfx">+</span></div>
+        <div class="stat-lbl">Projects Delivered</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal-fade" style="--d:.1s">
+        <div class="stat-icon-sm"><i class="fas fa-users"></i></div>
+        <div class="stat-val"><span class="counter" data-target="80">0</span><span class="stat-sfx">+</span></div>
+        <div class="stat-lbl">Happy Clients</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal-fade" style="--d:.2s">
+        <div class="stat-icon-sm"><i class="fas fa-calendar-check"></i></div>
+        <div class="stat-val"><span class="counter" data-target="5">0</span><span class="stat-sfx">+</span></div>
+        <div class="stat-lbl">Years Experience</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal-fade" style="--d:.3s">
+        <div class="stat-icon-sm"><i class="fas fa-star"></i></div>
+        <div class="stat-val"><span class="counter" data-target="98">0</span><span class="stat-sfx">%</span></div>
+        <div class="stat-lbl">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-visual reveal-fade">
+        <div class="cube-scene">
+          <div class="cube3d" id="cube3d">
+            <div class="c-face c-front"><i class="fas fa-code"></i></div>
+            <div class="c-face c-back"><i class="fas fa-database"></i></div>
+            <div class="c-face c-left"><i class="fas fa-mobile-alt"></i></div>
+            <div class="c-face c-right"><i class="fas fa-cloud"></i></div>
+            <div class="c-face c-top"><i class="fas fa-brain"></i></div>
+            <div class="c-face c-bottom"><i class="fas fa-palette"></i></div>
+          </div>
+        </div>
+        <div class="about-float-cards">
+          <div class="afc glass">
+            <i class="fas fa-trophy"></i>
+            <div><strong>Top Rated</strong><span>Clutch &amp; Upwork</span></div>
+          </div>
+          <div class="afc glass afc-2">
+            <i class="fas fa-bolt"></i>
+            <div><strong>Fast Delivery</strong><span>On-time, every time</span></div>
+          </div>
+          <div class="afc glass afc-3">
+            <i class="fas fa-shield-alt"></i>
+            <div><strong>NDA Protected</strong><span>Full IP ownership</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="sec-badge reveal-fade">Our Story</span>
+        <h2 class="sec-title reveal-fade" style="--d:.1s">
+          Built to Help <span class="grad">Businesses Grow</span>
+        </h2>
+        <p class="about-lead reveal-fade" style="--d:.2s">
+          Auxano — from the Greek <em>αὐξάνω</em>, meaning <strong>"to grow"</strong> — is more than a dev studio. We are your long-term digital growth partners.
+        </p>
+        <p class="reveal-fade" style="--d:.25s">
+          Founded by <strong>Pratik Sharma</strong> in the heart of Delhi, Auxano was born from a passion for solving real business problems with technology. We've grown from a freelance practice to a full-service studio serving clients across India and globally.
+        </p>
+        <p class="reveal-fade" style="--d:.3s">
+          Our multidisciplinary team brings together mastery in design, development, DevOps, and strategy — ensuring every product isn't just functional, but extraordinary.
+        </p>
+        <div class="about-values reveal-fade" style="--d:.35s">
+          <div class="av-item">
+            <i class="fas fa-bullseye"></i>
+            <div><strong>Precision</strong><span>Every detail matters</span></div>
+          </div>
+          <div class="av-item">
+            <i class="fas fa-lightbulb"></i>
+            <div><strong>Innovation</strong><span>Cutting-edge solutions</span></div>
+          </div>
+          <div class="av-item">
+            <i class="fas fa-handshake"></i>
+            <div><strong>Partnership</strong><span>Your success is ours</span></div>
+          </div>
+          <div class="av-item">
+            <i class="fas fa-expand-arrows-alt"></i>
+            <div><strong>Scalability</strong><span>Built to grow with you</span></div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary reveal-fade" style="--d:.4s">
+          Work With Us <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ PROCESS ══════════════════════════════ -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">How We Work</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">Our Battle-Tested <span class="grad">Process</span></h2>
+      <p class="sec-sub reveal-fade" style="--d:.2s">A proven, agile approach that ensures quality, speed, and satisfaction at every stage.</p>
+    </div>
+    <div class="process-track">
+      <div class="process-line"></div>
+
+      <div class="process-step reveal-up" style="--d:0s">
+        <div class="pstep-num">01</div>
+        <div class="pstep-icon"><i class="fas fa-search"></i></div>
+        <div class="pstep-card glass">
+          <h3>Discover &amp; Strategy</h3>
+          <p>Deep-dive into your business goals, audience, and competitive landscape. Define the roadmap, tech stack, and success metrics before writing a single line.</p>
+          <ul class="pstep-list">
+            <li><i class="fas fa-check-circle"></i>Requirements Analysis</li>
+            <li><i class="fas fa-check-circle"></i>Market Research</li>
+            <li><i class="fas fa-check-circle"></i>Technical Architecture</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step reveal-up" style="--d:.1s">
+        <div class="pstep-num">02</div>
+        <div class="pstep-icon"><i class="fas fa-pencil-ruler"></i></div>
+        <div class="pstep-card glass">
+          <h3>Design &amp; Prototype</h3>
+          <p>Stunning UI/UX with interactive prototypes. Iterate rapidly based on feedback before touching code.</p>
+          <ul class="pstep-list">
+            <li><i class="fas fa-check-circle"></i>Wireframing</li>
+            <li><i class="fas fa-check-circle"></i>Visual Design</li>
+            <li><i class="fas fa-check-circle"></i>Interactive Prototypes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step reveal-up" style="--d:.2s">
+        <div class="pstep-num">03</div>
+        <div class="pstep-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="pstep-card glass">
+          <h3>Develop &amp; Test</h3>
+          <p>Agile sprints with continuous QA. Clean, scalable code with comprehensive test coverage.</p>
+          <ul class="pstep-list">
+            <li><i class="fas fa-check-circle"></i>Sprint Development</li>
+            <li><i class="fas fa-check-circle"></i>Code Reviews</li>
+            <li><i class="fas fa-check-circle"></i>QA &amp; Testing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step reveal-up" style="--d:.3s">
+        <div class="pstep-num">04</div>
+        <div class="pstep-icon"><i class="fas fa-rocket"></i></div>
+        <div class="pstep-card glass">
+          <h3>Launch &amp; Scale</h3>
+          <p>Smooth CI/CD deployment with monitoring, analytics, and dedicated post-launch support.</p>
+          <ul class="pstep-list">
+            <li><i class="fas fa-check-circle"></i>CI/CD Deployment</li>
+            <li><i class="fas fa-check-circle"></i>Performance Monitoring</li>
+            <li><i class="fas fa-check-circle"></i>Ongoing Support</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ PORTFOLIO ══════════════════════════════ -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">Our Work</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">Projects That <span class="grad">Speak Loudly</span></h2>
+      <p class="sec-sub reveal-fade" style="--d:.2s">A curated selection of our finest work across web, mobile, and AI projects.</p>
+    </div>
+
+    <div class="port-filters reveal-fade" style="--d:.25s">
+      <button class="pfilt active" data-filter="all">All</button>
+      <button class="pfilt" data-filter="web">Web App</button>
+      <button class="pfilt" data-filter="mobile">Mobile</button>
+      <button class="pfilt" data-filter="ai">AI/ML</button>
+      <button class="pfilt" data-filter="design">Design</button>
+    </div>
+
+    <div class="port-grid" id="port-grid">
+
+      <!-- FinTrack -->
+      <div class="port-card glass reveal-up" data-cat="web" style="--d:0s">
+        <div class="port-preview">
+          <div class="mock-browser">
+            <div class="mb-bar"><span></span><span></span><span></span><span class="mb-url">fintrack.app</span></div>
+            <div class="mb-body ft-ui">
+              <div class="ft-sidebar">
+                <div class="ft-nav-item active"></div>
+                <div class="ft-nav-item"></div>
+                <div class="ft-nav-item"></div>
+                <div class="ft-nav-item"></div>
+              </div>
+              <div class="ft-main">
+                <div class="ft-title">Portfolio Overview</div>
+                <div class="ft-metric">₹24.8L <span class="up">+18.4%</span></div>
+                <div class="ft-chart-area">
+                  <svg viewBox="0 0 160 60" class="ft-line-chart">
+                    <polyline points="0,50 30,35 60,40 90,20 120,28 160,10" fill="none" stroke="#00D4FF" stroke-width="2"/>
+                    <polyline points="0,50 30,35 60,40 90,20 120,28 160,10 160,60 0,60" fill="url(#chartGrad)" opacity=".3"/>
+                    <defs>
+                      <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#00D4FF"/>
+                        <stop offset="100%" stop-color="transparent"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="ft-row">
+                  <div class="ft-pill green">Stocks +12%</div>
+                  <div class="ft-pill blue">Crypto +31%</div>
+                  <div class="ft-pill amber">Real Estate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <span class="port-cat">Web App</span>
+          <h3>FinTrack Pro</h3>
+          <p>Real-time financial dashboard with AI-driven insights, portfolio tracking, and multi-asset analytics.</p>
+          <div class="port-tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>D3.js</span></div>
+          <a href="#contact" class="port-link">View Case Study <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- MediConnect -->
+      <div class="port-card glass reveal-up" data-cat="mobile" style="--d:.07s">
+        <div class="port-preview">
+          <div class="mock-phone">
+            <div class="mp-notch"></div>
+            <div class="mp-screen mc-ui">
+              <div class="mc-head">MediConnect <i class="fas fa-heartbeat"></i></div>
+              <div class="mc-doc-card">
+                <div class="mc-avatar">Dr</div>
+                <div><div class="mc-name">Dr. Priya Sharma</div><div class="mc-spec">Cardiologist • 4.9★</div></div>
+              </div>
+              <div class="mc-slots">
+                <div class="mc-slot active">10:00 AM</div>
+                <div class="mc-slot">11:30 AM</div>
+                <div class="mc-slot">2:00 PM</div>
+              </div>
+              <div class="mc-cta">Book Appointment</div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <span class="port-cat">Mobile App</span>
+          <h3>MediConnect</h3>
+          <p>Healthcare platform connecting patients &amp; doctors. Video consultations, e-prescriptions, health records.</p>
+          <div class="port-tags"><span>Flutter</span><span>Firebase</span><span>WebRTC</span><span>Stripe</span></div>
+          <a href="#contact" class="port-link">View Case Study <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- ShopNow -->
+      <div class="port-card glass reveal-up" data-cat="web" style="--d:.14s">
+        <div class="port-preview">
+          <div class="mock-browser">
+            <div class="mb-bar"><span></span><span></span><span></span><span class="mb-url">shopnow.store</span></div>
+            <div class="mb-body sn-ui">
+              <div class="sn-nav">ShopNow <span class="sn-cart"><i class="fas fa-shopping-cart"></i> 3</span></div>
+              <div class="sn-cats"><span class="sn-cat active">All</span><span class="sn-cat">Electronics</span><span class="sn-cat">Fashion</span></div>
+              <div class="sn-products">
+                <div class="sn-prod"><div class="sn-img sn-img1"></div><div class="sn-price">₹2,499</div></div>
+                <div class="sn-prod"><div class="sn-img sn-img2"></div><div class="sn-price">₹1,299</div></div>
+                <div class="sn-prod"><div class="sn-img sn-img3"></div><div class="sn-price">₹3,999</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <span class="port-cat">E-Commerce</span>
+          <h3>ShopNow Platform</h3>
+          <p>Full-featured e-commerce with inventory management, multi-vendor support, and analytics dashboard.</p>
+          <div class="port-tags"><span>Next.js</span><span>MongoDB</span><span>Redis</span><span>Razorpay</span></div>
+          <a href="#contact" class="port-link">View Case Study <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- InsightAI -->
+      <div class="port-card glass reveal-up" data-cat="ai" style="--d:.21s">
+        <div class="port-preview">
+          <div class="mock-browser">
+            <div class="mb-bar"><span></span><span></span><span></span><span class="mb-url">insightai.co</span></div>
+            <div class="mb-body ai-ui">
+              <div class="ai-header-ui"><i class="fas fa-brain"></i> InsightAI</div>
+              <div class="ai-prompt">Analyse Q3 revenue trends by region…</div>
+              <div class="ai-resp">
+                <div class="ai-line"></div>
+                <div class="ai-line short"></div>
+                <div class="ai-badge">📈 +34% YoY · North India leads</div>
+              </div>
+              <div class="ai-chips">
+                <div class="ai-chip">Forecast</div>
+                <div class="ai-chip">Export</div>
+                <div class="ai-chip">Share</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <span class="port-cat">AI / ML</span>
+          <h3>InsightAI Dashboard</h3>
+          <p>AI-powered business analytics with natural language queries, predictive modelling, and automated reports.</p>
+          <div class="port-tags"><span>Python</span><span>LangChain</span><span>OpenAI</span><span>FastAPI</span></div>
+          <a href="#contact" class="port-link">View Case Study <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- TravelMate -->
+      <div class="port-card glass reveal-up" data-cat="mobile" style="--d:.28s">
+        <div class="port-preview">
+          <div class="mock-phone">
+            <div class="mp-notch"></div>
+            <div class="mp-screen tm-ui">
+              <div class="tm-hero-img"></div>
+              <div class="tm-overlay">
+                <div class="tm-dest">✈ Goa, India</div>
+                <div class="tm-info">5 days · ₹28,999 /person</div>
+                <div class="tm-row">
+                  <div class="tm-tag">🏨 Beach Resort</div>
+                  <div class="tm-tag">🍽 All Meals</div>
+                </div>
+                <div class="tm-cta">Book Now</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <span class="port-cat">Mobile App</span>
+          <h3>TravelMate</h3>
+          <p>AI itinerary planning, hotel booking, and group travel coordination in one sleek app.</p>
+          <div class="port-tags"><span>React Native</span><span>Node.js</span><span>Maps API</span><span>AI</span></div>
+          <a href="#contact" class="port-link">View Case Study <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- EduLearn -->
+      <div class="port-card glass reveal-up" data-cat="design" style="--d:.35s">
+        <div class="port-preview">
+          <div class="design-prev">
+            <div class="dp-logo-area">
+              <div class="dp-logo-mark">E</div>
+              <div class="dp-logo-text">EduLearn</div>
+            </div>
+            <div class="dp-palette">
+              <div class="dp-swatch" style="background:#6C63FF"></div>
+              <div class="dp-swatch" style="background:#FF6584"></div>
+              <div class="dp-swatch" style="background:#43CBFF"></div>
+              <div class="dp-swatch" style="background:#FFC947"></div>
+            </div>
+            <div class="dp-type">
+              <div class="dp-t1">Aa</div>
+              <div class="dp-t2">Body text sample</div>
+            </div>
+            <div class="dp-components">
+              <div class="dp-btn">Primary</div>
+              <div class="dp-tag">Tag</div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <span class="port-cat">Brand Design</span>
+          <h3>EduLearn Brand Identity</h3>
+          <p>Complete brand identity &amp; design system for an EdTech startup — logo, UI kit, marketing assets.</p>
+          <div class="port-tags"><span>Figma</span><span>Brand Strategy</span><span>Design System</span><span>Illustration</span></div>
+          <a href="#contact" class="port-link">View Case Study <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+    </div><!-- end port-grid -->
+
+    <div class="port-cta reveal-fade">
+      <a href="#contact" class="btn-ghost">
+        Discuss Your Project <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ TECH STACK ══════════════════════════════ -->
+<section class="section tech-section" id="tech">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">Technologies</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">Our <span class="grad">Tech Arsenal</span></h2>
+      <p class="sec-sub reveal-fade" style="--d:.2s">The most powerful, modern, and battle-tested tools in the industry.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-cat glass reveal-up" style="--d:0s">
+        <div class="tc-head"><i class="fas fa-laptop-code"></i> Frontend</div>
+        <div class="tc-items">
+          <div class="tc-item"><span class="tc-sym">⚛</span><span>React</span></div>
+          <div class="tc-item"><span class="tc-sym">▲</span><span>Next.js</span></div>
+          <div class="tc-item"><span class="tc-sym">💚</span><span>Vue.js</span></div>
+          <div class="tc-item"><span class="tc-sym">🎨</span><span>Tailwind</span></div>
+          <div class="tc-item"><span class="tc-sym">📘</span><span>TypeScript</span></div>
+        </div>
+      </div>
+      <div class="tech-cat glass reveal-up" style="--d:.05s">
+        <div class="tc-head"><i class="fas fa-server"></i> Backend</div>
+        <div class="tc-items">
+          <div class="tc-item"><span class="tc-sym">🟢</span><span>Node.js</span></div>
+          <div class="tc-item"><span class="tc-sym">🐍</span><span>Python</span></div>
+          <div class="tc-item"><span class="tc-sym">🚀</span><span>FastAPI</span></div>
+          <div class="tc-item"><span class="tc-sym">💎</span><span>GraphQL</span></div>
+          <div class="tc-item"><span class="tc-sym">🔴</span><span>Redis</span></div>
+        </div>
+      </div>
+      <div class="tech-cat glass reveal-up" style="--d:.1s">
+        <div class="tc-head"><i class="fas fa-database"></i> Database</div>
+        <div class="tc-items">
+          <div class="tc-item"><span class="tc-sym">🐘</span><span>PostgreSQL</span></div>
+          <div class="tc-item"><span class="tc-sym">🍃</span><span>MongoDB</span></div>
+          <div class="tc-item"><span class="tc-sym">🔥</span><span>Firebase</span></div>
+          <div class="tc-item"><span class="tc-sym">📊</span><span>Supabase</span></div>
+          <div class="tc-item"><span class="tc-sym">⚡</span><span>MySQL</span></div>
+        </div>
+      </div>
+      <div class="tech-cat glass reveal-up" style="--d:.15s">
+        <div class="tc-head"><i class="fas fa-cloud"></i> Cloud &amp; DevOps</div>
+        <div class="tc-items">
+          <div class="tc-item"><span class="tc-sym">☁</span><span>AWS</span></div>
+          <div class="tc-item"><span class="tc-sym">🔵</span><span>GCP</span></div>
+          <div class="tc-item"><span class="tc-sym">🐳</span><span>Docker</span></div>
+          <div class="tc-item"><span class="tc-sym">☸</span><span>Kubernetes</span></div>
+          <div class="tc-item"><span class="tc-sym">🔄</span><span>GitHub Actions</span></div>
+        </div>
+      </div>
+      <div class="tech-cat glass reveal-up" style="--d:.2s">
+        <div class="tc-head"><i class="fas fa-mobile-alt"></i> Mobile</div>
+        <div class="tc-items">
+          <div class="tc-item"><span class="tc-sym">💙</span><span>Flutter</span></div>
+          <div class="tc-item"><span class="tc-sym">⚛</span><span>React Native</span></div>
+          <div class="tc-item"><span class="tc-sym">🍎</span><span>Swift</span></div>
+          <div class="tc-item"><span class="tc-sym">🤖</span><span>Kotlin</span></div>
+          <div class="tc-item"><span class="tc-sym">📱</span><span>Expo</span></div>
+        </div>
+      </div>
+      <div class="tech-cat glass reveal-up" style="--d:.25s">
+        <div class="tc-head"><i class="fas fa-brain"></i> AI / ML</div>
+        <div class="tc-items">
+          <div class="tc-item"><span class="tc-sym">🤖</span><span>OpenAI</span></div>
+          <div class="tc-item"><span class="tc-sym">🧠</span><span>TensorFlow</span></div>
+          <div class="tc-item"><span class="tc-sym">🔗</span><span>LangChain</span></div>
+          <div class="tc-item"><span class="tc-sym">🤗</span><span>HuggingFace</span></div>
+          <div class="tc-item"><span class="tc-sym">📊</span><span>Pandas/NumPy</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ WHY US ══════════════════════════════ -->
+<section class="section why-us">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">Why Auxano</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">The Auxano <span class="grad">Advantage</span></h2>
+      <p class="sec-sub reveal-fade" style="--d:.2s">What sets us apart in a crowded marketplace of digital agencies.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card glass reveal-up" style="--d:0s">
+        <div class="why-icon"><i class="fas fa-gem"></i></div>
+        <h3>Premium Quality</h3>
+        <p>Every project undergoes rigorous QA, code reviews, and performance optimisation before delivery.</p>
+      </div>
+      <div class="why-card glass reveal-up" style="--d:.07s">
+        <div class="why-icon"><i class="fas fa-clock"></i></div>
+        <h3>On-Time Delivery</h3>
+        <p>We respect deadlines. Our agile methodology ensures predictable timelines with zero surprises.</p>
+      </div>
+      <div class="why-card glass reveal-up" style="--d:.14s">
+        <div class="why-icon"><i class="fas fa-comments"></i></div>
+        <h3>Clear Communication</h3>
+        <p>Dedicated PMs, weekly reports, and Slack access keep you fully informed at every step.</p>
+      </div>
+      <div class="why-card glass reveal-up" style="--d:.21s">
+        <div class="why-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+        <h3>Scalable Architecture</h3>
+        <p>Built to handle 10x traffic from day one. Architecture that grows gracefully with your business.</p>
+      </div>
+      <div class="why-card glass reveal-up" style="--d:.28s">
+        <div class="why-icon"><i class="fas fa-lock"></i></div>
+        <h3>IP &amp; NDA Protection</h3>
+        <p>Full NDA sign-off, complete code ownership transfer, and strict data confidentiality guaranteed.</p>
+      </div>
+      <div class="why-card glass reveal-up" style="--d:.35s">
+        <div class="why-icon"><i class="fas fa-tools"></i></div>
+        <h3>Post-Launch Support</h3>
+        <p>3 months free maintenance post-launch. Long-term support packages for ongoing partnership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ TEAM ══════════════════════════════ -->
+<section class="section team" id="team">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">The Minds Behind</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">Meet Our <span class="grad">Dream Team</span></h2>
+      <p class="sec-sub reveal-fade" style="--d:.2s">Passionate, talented, and obsessed with excellence. The people building your future.</p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card glass reveal-up featured-card" style="--d:0s">
+        <div class="tc-glow-ring"></div>
+        <div class="tc-avatar tc-founder">PS</div>
+        <div class="tc-founder-badge">Founder</div>
+        <div class="tc-body">
+          <h3>Pratik Sharma</h3>
+          <span class="tc-role">Founder &amp; Lead Developer</span>
+          <p>Full-stack architect with 7+ years building scalable products. Passionate about clean code, great UX, and helping clients grow.</p>
+          <div class="tc-skills"><span>React</span><span>Node.js</span><span>Architecture</span><span>Strategy</span></div>
+        </div>
+        <div class="tc-social">
+          <a href="#" class="ts-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="ts-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="ts-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card glass reveal-up" style="--d:.08s">
+        <div class="tc-avatar tc-design">AK</div>
+        <div class="tc-body">
+          <h3>Ananya Kapoor</h3>
+          <span class="tc-role">UI/UX Lead Designer</span>
+          <p>Design systems architect with a sharp eye for aesthetics and user psychology. 60+ products shipped.</p>
+          <div class="tc-skills"><span>Figma</span><span>Motion</span><span>Research</span></div>
+        </div>
+        <div class="tc-social">
+          <a href="#" class="ts-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="ts-btn" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card glass reveal-up" style="--d:.16s">
+        <div class="tc-avatar tc-backend">RV</div>
+        <div class="tc-body">
+          <h3>Rohan Verma</h3>
+          <span class="tc-role">Backend Architect</span>
+          <p>API &amp; database specialist. Has built systems handling millions of daily requests reliably.</p>
+          <div class="tc-skills"><span>Python</span><span>Node.js</span><span>AWS</span></div>
+        </div>
+        <div class="tc-social">
+          <a href="#" class="ts-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="ts-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card glass reveal-up" style="--d:.24s">
+        <div class="tc-avatar tc-devops">PS2</div>
+        <div class="tc-body">
+          <h3>Priya Singh</h3>
+          <span class="tc-role">DevOps Engineer</span>
+          <p>Cloud infrastructure expert ensuring 99.99% uptime and seamless zero-downtime deployments.</p>
+          <div class="tc-skills"><span>Docker</span><span>K8s</span><span>CI/CD</span></div>
+        </div>
+        <div class="tc-social">
+          <a href="#" class="ts-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="ts-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="team-card glass reveal-up" style="--d:.32s">
+        <div class="tc-avatar tc-mobile">AK2</div>
+        <div class="tc-body">
+          <h3>Aditya Kumar</h3>
+          <span class="tc-role">Mobile Dev Specialist</span>
+          <p>Flutter &amp; React Native expert. 20+ published apps averaging a 4.8★ store rating.</p>
+          <div class="tc-skills"><span>Flutter</span><span>React Native</span><span>Swift</span></div>
+        </div>
+        <div class="tc-social">
+          <a href="#" class="ts-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="ts-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ TESTIMONIALS ══════════════════════════════ -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">Client Love</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">What Our <span class="grad">Clients Say</span></h2>
+    </div>
+
+    <div class="testi-slider">
+      <div class="testi-track" id="testi-track">
+
+        <div class="testi-card glass">
+          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Auxano transformed our outdated system into a stunning platform handling 50K+ daily users. Pratik and his team are world-class — communication, quality, and delivery were all exceptional."</p>
+          <div class="testi-author">
+            <div class="testi-av">RK</div>
+            <div class="testi-meta"><strong>Rahul Khanna</strong><span>CEO, TechVentures India</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card glass">
+          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Delivered ahead of schedule! Our app has been downloaded 75,000+ times with a 4.9★ rating. The quality genuinely exceeded every expectation. I cannot recommend Auxano enough."</p>
+          <div class="testi-author">
+            <div class="testi-av">SM</div>
+            <div class="testi-meta"><strong>Sneha Mehta</strong><span>Founder, EduPrime</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card glass">
+          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"The AI integration Auxano built increased our e-commerce conversion rate by 38%. Their technical depth is unmatched. We've now signed a long-term retainer — best decision we've made."</p>
+          <div class="testi-author">
+            <div class="testi-av">AP</div>
+            <div class="testi-meta"><strong>Arjun Patel</strong><span>Director, RetailMax</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card glass">
+          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Auxano didn't just build what we asked — they challenged our thinking and delivered something 10x better. Our users love the product and so do investors. Truly a game-changing partnership."</p>
+          <div class="testi-author">
+            <div class="testi-av">NG</div>
+            <div class="testi-meta"><strong>Neha Gupta</strong><span>Co-Founder, HealthFirst</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card glass">
+          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Complete brand identity plus a stunning website in 3 weeks — and it looked like it took 6 months. The attention to detail and the professionalism at Auxano is something truly rare."</p>
+          <div class="testi-author">
+            <div class="testi-av">VB</div>
+            <div class="testi-meta"><strong>Vikram Bose</strong><span>Founder, BrandCraft</span></div>
+          </div>
+        </div>
+
+      </div><!-- end testi-track -->
+
+      <div class="testi-controls">
+        <button class="tctl-btn" id="testi-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <div class="testi-dots" id="testi-dots"></div>
+        <button class="tctl-btn" id="testi-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════ PRICING ══════════════════════════════ -->
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">Transparent Pricing</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">Investment in Your <span class="grad">Digital Future</span></h2>
+      <p class="sec-sub reveal-fade" style="--d:.2s">Flexible pricing for startups, growing businesses, and enterprises.</p>
+    </div>
+
+    <div class="pricing-toggle reveal-fade" style="--d:.25s">
+      <span class="ptog-lbl" id="ptog-monthly" data-active="true">Monthly Retainer</span>
+      <div class="ptog-switch" id="ptog-switch" role="switch" aria-checked="false" tabindex="0">
+        <div class="ptog-dot"></div>
+      </div>
+      <span class="ptog-lbl" id="ptog-project">Project-Based <span class="best-val">Best Value</span></span>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card glass reveal-up" style="--d:0s">
+        <div class="pc-label">Starter</div>
+        <div class="pc-price">
+          <sup>₹</sup>
+          <span class="pc-amt" id="p1-amt">4,999</span>
+          <span class="pc-per" id="p1-per">/month</span>
+        </div>
+        <p class="pc-desc">Perfect for startups launching their first digital product or landing page.</p>
+        <ul class="pc-feat">
+          <li class="yes"><i class="fas fa-check"></i> Landing Page / Website</li>
+          <li class="yes"><i class="fas fa-check"></i> Responsive Design</li>
+          <li class="yes"><i class="fas fa-check"></i> Basic SEO Setup</li>
+          <li class="yes"><i class="fas fa-check"></i> Contact Form Integration</li>
+          <li class="yes"><i class="fas fa-check"></i> 1 Month Support</li>
+          <li class="no"><i class="fas fa-times"></i> Custom Backend</li>
+          <li class="no"><i class="fas fa-times"></i> Mobile App</li>
+          <li class="no"><i class="fas fa-times"></i> AI Features</li>
+        </ul>
+        <a href="#contact" class="btn-price">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="price-card glass price-pop reveal-up" style="--d:.1s">
+        <div class="price-pop-glow"></div>
+        <div class="pc-label pop-label">Most Popular</div>
+        <div class="pc-price">
+          <sup>₹</sup>
+          <span class="pc-amt" id="p2-amt">14,999</span>
+          <span class="pc-per" id="p2-per">/month</span>
+        </div>
+        <p class="pc-desc">For growing businesses that need a complete, custom-built digital platform.</p>
+        <ul class="pc-feat">
+          <li class="yes"><i class="fas fa-check"></i> Full Stack Web Application</li>
+          <li class="yes"><i class="fas fa-check"></i> Custom Backend &amp; API</li>
+          <li class="yes"><i class="fas fa-check"></i> Database Architecture</li>
+          <li class="yes"><i class="fas fa-check"></i> Admin Dashboard</li>
+          <li class="yes"><i class="fas fa-check"></i> Payment Integration</li>
+          <li class="yes"><i class="fas fa-check"></i> 3 Months Support</li>
+          <li class="yes"><i class="fas fa-check"></i> Basic Mobile App</li>
+          <li class="no"><i class="fas fa-times"></i> AI Features</li>
+        </ul>
+        <a href="#contact" class="btn-price btn-price-pop">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="price-card glass reveal-up" style="--d:.2s">
+        <div class="pc-label">Enterprise</div>
+        <div class="pc-price">
+          <span class="pc-amt pc-custom">Custom</span>
+        </div>
+        <p class="pc-desc">Dedicated teams, complex systems, and AI-powered enterprise solutions.</p>
+        <ul class="pc-feat">
+          <li class="yes"><i class="fas fa-check"></i> Everything in Growth</li>
+          <li class="yes"><i class="fas fa-check"></i> AI/ML Integration</li>
+          <li class="yes"><i class="fas fa-check"></i> Full iOS &amp; Android Apps</li>
+          <li class="yes"><i class="fas fa-check"></i> Cloud Infrastructure</li>
+          <li class="yes"><i class="fas fa-check"></i> Dedicated Dev Team</li>
+          <li class="yes"><i class="fas fa-check"></i> 24/7 Priority Support</li>
+          <li class="yes"><i class="fas fa-check"></i> SLA Guarantee</li>
+          <li class="yes"><i class="fas fa-check"></i> White-Label Options</li>
+        </ul>
+        <a href="#contact" class="btn-price">Book a Call <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+    <p class="price-note reveal-fade">All prices include design, development, testing &amp; deployment. <a href="#contact">Let's talk</a> for a custom quote.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FAQ ══════════════════════════════ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">Questions &amp; Answers</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">Frequently <span class="grad">Asked Questions</span></h2>
+    </div>
+    <div class="faq-grid">
+
+      <div class="faq-item glass reveal-up" style="--d:0s">
+        <button class="faq-q" aria-expanded="false">
+          How long does a typical project take?
+          <span class="faq-ico"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-a">
+          <p>Timelines vary by scope: a landing page takes 1–2 weeks; a full web app 6–12 weeks; a mobile app 8–16 weeks. You'll receive a detailed milestone-based timeline during our discovery call.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass reveal-up" style="--d:.05s">
+        <button class="faq-q" aria-expanded="false">
+          Do you provide post-launch support?
+          <span class="faq-ico"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-a">
+          <p>Yes — all projects include a free support period (1–3 months depending on plan). We also offer ongoing monthly retainer packages for long-term partnerships and continuous improvement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass reveal-up" style="--d:.1s">
+        <button class="faq-q" aria-expanded="false">
+          Who owns the code and intellectual property?
+          <span class="faq-ico"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-a">
+          <p>You do — 100%. Upon full payment, all source code, design files, and IP transfer completely to you. We sign NDAs before any project begins to protect your business information.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass reveal-up" style="--d:.15s">
+        <button class="faq-q" aria-expanded="false">
+          Do you work with clients outside India?
+          <span class="faq-ico"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-a">
+          <p>Absolutely. We serve clients globally. Communication happens over Slack, Zoom, and email. We adapt to different time zones and accept international payments via wire transfer, PayPal, and Wise.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass reveal-up" style="--d:.2s">
+        <button class="faq-q" aria-expanded="false">
+          Can you work with our existing codebase?
+          <span class="faq-ico"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-a">
+          <p>Yes! We regularly perform code audits, legacy migrations, and feature additions on existing projects. Our team will review your codebase and provide a detailed assessment and improvement roadmap.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass reveal-up" style="--d:.25s">
+        <button class="faq-q" aria-expanded="false">
+          What is your payment structure?
+          <span class="faq-ico"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-a">
+          <p>For project-based work: 40% upfront, 30% at midpoint milestone, 30% upon delivery. For retainer packages, payment is due at the start of each month. We accept bank transfers, UPI, and international payments.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge reveal-fade">Let's Build Together</span>
+      <h2 class="sec-title reveal-fade" style="--d:.1s">Ready to Build Something <span class="grad">Amazing?</span></h2>
+      <p class="sec-sub reveal-fade" style="--d:.2s">Tell us about your project. We'll respond within 24 hours with a personalised plan.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info reveal-fade">
+        <div class="ci-item glass">
+          <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+          <div class="ci-body">
+            <strong>Email Us</strong>
+            <a href="mailto:hello.auxano@gmail.com">hello.auxano@gmail.com</a>
+          </div>
+        </div>
+        <div class="ci-item glass">
+          <div class="ci-icon ci-wa"><i class="fab fa-whatsapp"></i></div>
+          <div class="ci-body">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener">+91 99999 99999</a>
+          </div>
+        </div>
+        <div class="ci-item glass">
+          <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="ci-body">
+            <strong>Our Office</strong>
+            <span>6 Marg, Delhi, India – 110001</span>
+          </div>
+        </div>
+        <div class="ci-item glass">
+          <div class="ci-icon"><i class="fas fa-clock"></i></div>
+          <div class="ci-body">
+            <strong>Working Hours</strong>
+            <span>Mon – Sat: 9:00 AM – 7:00 PM IST</span>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="#" class="cs-btn glass" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="cs-btn glass" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="cs-btn glass" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="cs-btn glass" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="cs-btn glass" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap glass reveal-up" style="--d:.1s">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="cf-row">
+            <div class="cf-grp">
+              <label for="cf-name">Your Name *</label>
+              <input type="text" id="cf-name" name="name" placeholder="Rahul Sharma" required autocomplete="name" />
+              <span class="cf-err" id="err-name"></span>
+            </div>
+            <div class="cf-grp">
+              <label for="cf-email">Email Address *</label>
+              <input type="email" id="cf-email" name="email" placeholder="rahul@company.com" required autocomplete="email" />
+              <span class="cf-err" id="err-email"></span>
+            </div>
+          </div>
+          <div class="cf-row">
+            <div class="cf-grp">
+              <label for="cf-phone">Phone Number</label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+            </div>
+            <div class="cf-grp">
+              <label for="cf-budget">Project Budget</label>
+              <select id="cf-budget" name="budget">
+                <option value="">Select Budget Range</option>
+                <option value="under-50k">Under ₹50,000</option>
+                <option value="50k-2L">₹50,000 – ₹2,00,000</option>
+                <option value="2L-5L">₹2,00,000 – ₹5,00,000</option>
+                <option value="5L-10L">₹5,00,000 – ₹10,00,000</option>
+                <option value="10L+">₹10,00,000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="cf-grp">
+            <label for="cf-service">Service Required *</label>
+            <select id="cf-service" name="service" required>
+              <option value="">What do you need?</option>
+              <option value="web">Full Stack Web Development</option>
+              <option value="mobile">Mobile App Development</option>
+              <option value="uiux">UI/UX Design</option>
+              <option value="cloud">Cloud &amp; DevOps</option>
+              <option value="ai">AI / ML Integration</option>
+              <option value="brand">Brand &amp; Identity</option>
+              <option value="full">Complete Digital Solution</option>
+            </select>
+            <span class="cf-err" id="err-service"></span>
+          </div>
+          <div class="cf-grp">
+            <label for="cf-message">Tell Us About Your Project *</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Describe your project, goals, timeline, and any specific requirements…" required></textarea>
+            <span class="cf-err" id="err-message"></span>
+          </div>
+          <button type="submit" class="btn-submit" id="btn-submit">
+            <span class="bs-text">Send Message</span>
+            <span class="bs-loading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending…</span>
+            <i class="fas fa-paper-plane bs-icon"></i>
+          </button>
+          <div class="cf-success" id="cf-success" style="display:none">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <strong>Message sent!</strong>
+              <p>We'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-glow-orb"></div>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <span class="logo-sym">◈</span>
+          <span>AUXANO</span>
+        </a>
+        <p>Crafting digital excellence since 2019. Your vision, our expertise — together we build the future.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Mobile Apps</a></li>
+          <li><a href="#services">UI/UX Design</a></li>
+          <li><a href="#services">Cloud &amp; DevOps</a></li>
+          <li><a href="#services">AI Integration</a></li>
+          <li><a href="#services">Brand Identity</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#portfolio">Our Work</a></li>
+          <li><a href="#team">Meet the Team</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Technologies</h4>
+        <ul>
+          <li><a href="#tech">React &amp; Next.js</a></li>
+          <li><a href="#tech">Node.js &amp; Python</a></li>
+          <li><a href="#tech">Flutter &amp; React Native</a></li>
+          <li><a href="#tech">AWS &amp; GCP</a></li>
+          <li><a href="#tech">AI &amp; Machine Learning</a></li>
+          <li><a href="#tech">Figma &amp; Design</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact-col">
+        <h4>Contact</h4>
+        <ul class="fc-contact">
+          <li><i class="fas fa-envelope"></i><a href="mailto:hello.auxano@gmail.com">hello.auxano@gmail.com</a></li>
+          <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/919999999999">+91 99999 99999</a></li>
+          <li><i class="fas fa-map-marker-alt"></i><span>6 Marg, Delhi, India</span></li>
+        </ul>
+        <div class="footer-trust">
+          <i class="fas fa-shield-alt"></i>
+          <span>NDA Protected · Full IP Ownership</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Auxano Studio. All rights reserved. Built with <span class="heart">♥</span> in Delhi, India.</p>
+      <div class="fb-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll-to-top -->
+<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
